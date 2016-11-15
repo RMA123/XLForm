@@ -144,8 +144,8 @@
     self.textLabel.text = [NSString stringWithFormat:@"%@%@", self.rowDescriptor.title, self.rowDescriptor.required && self.rowDescriptor.sectionDescriptor.formDescriptor.addAsteriskToRequiredRowsTitle ? @"*" : @""];
     self.detailTextLabel.text = [self valueDisplayText];
     
-    if (self.textLabel.superview == self.contentView && self.detailTextLabel.superview == self.contentView &&
-        self.detailTextLabel.text != nil && ![self.detailTextLabel.text isEqualToString:@""]) {
+    if (self.textLabel.superview == self.contentView && self.detailTextLabel.superview == self.contentView)
+    {
         [self.textLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
         [self.detailTextLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
         [self.detailTextLabel setContentCompressionResistancePriority:1000 forAxis:UILayoutConstraintAxisHorizontal];
