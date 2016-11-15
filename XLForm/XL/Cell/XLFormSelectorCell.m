@@ -291,7 +291,9 @@
                                                                     style:UIAlertActionStyleDefault
                                                                   handler:^(UIAlertAction *action) {
                                                                       [weakSelf.rowDescriptor setValue:option];
-                                                                      [formViewController.tableView reloadData];
+                                                                      dispatch_async(dispatch_get_main_queue(), ^{
+                                                                          [formViewController.tableView reloadData];
+                                                                      });
                                                                   }]];
             }
             //15Nov16 - Mani - Disable animation
