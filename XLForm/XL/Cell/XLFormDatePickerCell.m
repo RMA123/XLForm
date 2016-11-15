@@ -37,19 +37,6 @@
     return YES;
 }
 
--(void)layoutSubviews {
-    [super layoutSubviews];
-    
-    CGRect textLabelFrame = self.textLabel.frame;
-    textLabelFrame.size.width = self.frame.size.width * .55;
-    
-    self.textLabel.frame = textLabelFrame;
-    self.textLabel.contentMode = UIViewContentModeScaleAspectFit;
-    
-    self.detailTextLabel.frame = CGRectMake(self.frame.size.width * .6, 0, self.frame.size.width * 0.35, self.frame.size.height);
-    self.detailTextLabel.adjustsFontSizeToFitWidth = true;
-}
-
 #pragma mark - Properties
 
 -(UIDatePicker *)datePicker
