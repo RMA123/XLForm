@@ -128,7 +128,7 @@
         [self.detailTextLabel setContentCompressionResistancePriority:1000 forAxis:UILayoutConstraintAxisHorizontal];
         NSLayoutConstraint * cstTextLblLeft = [NSLayoutConstraint constraintWithItem:self.textLabel attribute:NSLayoutAttributeLeadingMargin relatedBy:NSLayoutRelationEqual toItem:self.contentView attribute:NSLayoutAttributeLeadingMargin multiplier:1.0 constant:10.0];
         NSLayoutConstraint * cstDescriptionLblRight = [NSLayoutConstraint constraintWithItem:self.contentView attribute:NSLayoutAttributeTrailingMargin relatedBy:NSLayoutRelationEqual toItem:self.detailTextLabel attribute:NSLayoutAttributeTrailingMargin multiplier:1.0 constant:10.0];
-        NSLayoutConstraint * cstTextDescriptionDistance = [NSLayoutConstraint constraintWithItem:self.textLabel attribute:NSLayoutAttributeTrailingMargin relatedBy:NSLayoutRelationEqual toItem:self.detailTextLabel attribute:NSLayoutAttributeLeadingMargin multiplier:1.0 constant:-10.0];
+        NSLayoutConstraint * cstTextDescriptionDistance = [NSLayoutConstraint constraintWithItem:self.textLabel attribute:NSLayoutAttributeTrailingMargin relatedBy:NSLayoutRelationEqual toItem:self.detailTextLabel attribute:NSLayoutAttributeLeadingMargin multiplier:1.0 constant:10.0];
         [self.contentView addConstraints:[NSArray arrayWithObjects:cstTextLblLeft, cstDescriptionLblRight, cstTextDescriptionDistance, nil]];
         
         if (self.detailTextLabel.text.length > 0){
