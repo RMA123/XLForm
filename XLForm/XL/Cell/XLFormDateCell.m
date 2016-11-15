@@ -131,6 +131,17 @@
         NSLayoutConstraint * cstTextDescriptionDistance = [NSLayoutConstraint constraintWithItem:self.textLabel attribute:NSLayoutAttributeTrailingMargin relatedBy:NSLayoutRelationEqual toItem:self.detailTextLabel attribute:NSLayoutAttributeLeadingMargin multiplier:1.0 constant:-10.0];
         [self.contentView addConstraints:[NSArray arrayWithObjects:cstTextLblLeft, cstDescriptionLblRight, cstTextDescriptionDistance, nil]];
         
+        if (self.detailTextLabel.text.length > 0){
+            NSLayoutConstraint *widthConstraint = [NSLayoutConstraint constraintWithItem:self.detailTextLabel
+                                                                               attribute:NSLayoutAttributeWidth
+                                                                               relatedBy:NSLayoutRelationEqual
+                                                                                  toItem:self.contentView
+                                                                               attribute:NSLayoutAttributeWidth
+                                                                              multiplier:0.4
+                                                                                constant:0.0];
+            [self.contentView addConstraint:widthConstraint];
+        }
+        
         [self.contentView layoutIfNeeded];
         
     }
