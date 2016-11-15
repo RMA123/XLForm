@@ -48,9 +48,10 @@
     CGRect textLabelFrame = self.textLabel.frame;
     textLabelFrame.size.width = self.frame.size.width * .55;
     textLabelFrame.origin.x = self.frame.size.width * .05;
-    self.textLabel.numberOfLines = 0;
     
     self.textLabel.frame = textLabelFrame;
+    self.textLabel.text = self.textLabel.text;
+    
     self.detailTextLabel.frame = CGRectMake(self.frame.size.width * .60, 0, self.frame.size.width * 0.35, self.frame.size.height);
     self.detailTextLabel.adjustsFontSizeToFitWidth = true;
 }
