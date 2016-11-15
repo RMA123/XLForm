@@ -41,16 +41,14 @@
     [super layoutSubviews];
     
     CGRect textLabelFrame = self.textLabel.frame;
-    textLabelFrame.size.width = self.frame.size.width * .65;
+    textLabelFrame.size.width = self.frame.size.width * .55;
     textLabelFrame.origin.x = self.frame.size.width * .05;
     
     self.textLabel.frame = textLabelFrame;
-    self.textLabel.adjustsFontSizeToFitWidth = true;
     self.textLabel.numberOfLines = 0;
     
-    self.detailTextLabel.frame = CGRectMake(self.frame.size.width * .7, 0, self.frame.size.width * 0.25, self.frame.size.height);
+    self.detailTextLabel.frame = CGRectMake(self.frame.size.width * .6, 0, self.frame.size.width * 0.35, self.frame.size.height);
     self.detailTextLabel.adjustsFontSizeToFitWidth = true;
-    self.detailTextLabel.numberOfLines = 0;
 }
 
 #pragma mark - Properties
