@@ -177,15 +177,19 @@
                     ((id<XLFormRowDescriptorPopoverViewController>)selectorViewController).popoverController = self.popoverController;
                 }
                 if (self.detailTextLabel.window){
-                    [self.popoverController presentPopoverFromRect:CGRectMake(0, 0, self.detailTextLabel.frame.size.width, self.detailTextLabel.frame.size.height) inView:self.detailTextLabel permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+                    //15Nov16 - Mani - Disable animation
+                    [self.popoverController presentPopoverFromRect:CGRectMake(0, 0, self.detailTextLabel.frame.size.width, self.detailTextLabel.frame.size.height) inView:self.detailTextLabel permittedArrowDirections:UIPopoverArrowDirectionAny animated:NO];
                 }
                 else{
-                    [self.popoverController presentPopoverFromRect:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height) inView:self permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+                    //15Nov16 - Mani - Disable animation
+                    [self.popoverController presentPopoverFromRect:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height) inView:self permittedArrowDirections:UIPopoverArrowDirectionAny animated:NO];
                 }
-                [controller.tableView deselectRowAtIndexPath:[controller.tableView indexPathForCell:self] animated:YES];
+                //15Nov16 - Mani - Disable animation
+                [controller.tableView deselectRowAtIndexPath:[controller.tableView indexPathForCell:self] animated:NO];
             }
             else {
-                [controller.navigationController pushViewController:selectorViewController animated:YES];
+                //15Nov16 - Mani - Disable animation
+                [controller.navigationController pushViewController:selectorViewController animated:NO];
             }
         }
         else if (self.rowDescriptor.selectorOptions){
@@ -198,14 +202,18 @@
                 self.popoverController.delegate = self;
                 optionsViewController.popoverController = self.popoverController;
                 if (self.detailTextLabel.window){
-                    [self.popoverController presentPopoverFromRect:CGRectMake(0, 0, self.detailTextLabel.frame.size.width, self.detailTextLabel.frame.size.height) inView:self.detailTextLabel permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+                    //15Nov16 - Mani - Disable animation
+                    [self.popoverController presentPopoverFromRect:CGRectMake(0, 0, self.detailTextLabel.frame.size.width, self.detailTextLabel.frame.size.height) inView:self.detailTextLabel permittedArrowDirections:UIPopoverArrowDirectionAny animated:NO];
                 }
                 else{
-                    [self.popoverController presentPopoverFromRect:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height) inView:self permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+                    //15Nov16 - Mani - Disable animation
+                    [self.popoverController presentPopoverFromRect:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height) inView:self permittedArrowDirections:UIPopoverArrowDirectionAny animated:NO];
                 }
-                [controller.tableView deselectRowAtIndexPath:[controller.tableView indexPathForCell:self] animated:YES];
+                //15Nov16 - Mani - Disable animation
+                [controller.tableView deselectRowAtIndexPath:[controller.tableView indexPathForCell:self] animated:NO];
 			} else {
-				[controller.navigationController pushViewController:optionsViewController animated:YES];
+                //15Nov16 - Mani - Disable animation
+				[controller.navigationController pushViewController:optionsViewController animated:NO];
 			}
         }
     }
@@ -227,14 +235,18 @@
             self.popoverController.delegate = self;
             optionsViewController.popoverController = self.popoverController;
             if (self.detailTextLabel.window){
-                [self.popoverController presentPopoverFromRect:CGRectMake(0, 0, self.detailTextLabel.frame.size.width, self.detailTextLabel.frame.size.height) inView:self.detailTextLabel permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+                //15Nov16 - Mani - Disable animation
+                [self.popoverController presentPopoverFromRect:CGRectMake(0, 0, self.detailTextLabel.frame.size.width, self.detailTextLabel.frame.size.height) inView:self.detailTextLabel permittedArrowDirections:UIPopoverArrowDirectionAny animated:NO];
             }
             else{
-                [self.popoverController presentPopoverFromRect:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height) inView:self permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+                //15Nov16 - Mani - Disable animation
+                [self.popoverController presentPopoverFromRect:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height) inView:self permittedArrowDirections:UIPopoverArrowDirectionAny animated:NO];
             }
-            [controller.tableView deselectRowAtIndexPath:[controller.tableView indexPathForCell:self] animated:YES];
+            //15Nov16 - Mani - Disable animation
+            [controller.tableView deselectRowAtIndexPath:[controller.tableView indexPathForCell:self] animated:NO];
         } else {
-            [controller.navigationController pushViewController:optionsViewController animated:YES];
+            //15Nov16 - Mani - Disable animation
+            [controller.navigationController pushViewController:optionsViewController animated:NO];
         }
     }
     else if ([self.rowDescriptor.rowType isEqualToString:XLFormRowDescriptorTypeSelectorActionSheet]){
@@ -282,7 +294,8 @@
                                                                       [formViewController.tableView reloadData];
                                                                   }]];
             }
-            [formViewController presentViewController:alertController animated:YES completion:nil];
+            //15Nov16 - Mani - Disable animation
+            [formViewController presentViewController:alertController animated:NO completion:nil];
         }
 #ifndef XL_APP_EXTENSIONS
         else{
@@ -300,7 +313,8 @@
         }
 #endif
 #endif
-        [controller.tableView deselectRowAtIndexPath:[controller.form indexPathOfFormRow:self.rowDescriptor] animated:YES];
+        //15Nov16 - Mani - Disable animation
+        [controller.tableView deselectRowAtIndexPath:[controller.form indexPathOfFormRow:self.rowDescriptor] animated:NO];
     }
     else if ([self.rowDescriptor.rowType isEqualToString:XLFormRowDescriptorTypeSelectorAlertView]){
 
@@ -333,7 +347,8 @@
             [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil)
                                                                 style:UIAlertActionStyleCancel
                                                               handler:nil]];
-            [controller presentViewController:alertController animated:YES completion:nil];
+            //15Nov16 - Mani - Disable animation
+            [controller presentViewController:alertController animated:NO completion:nil];
 
         }
 #ifndef XL_APP_EXTENSIONS
@@ -352,10 +367,12 @@
         }
 #endif
 #endif
-        [controller.tableView deselectRowAtIndexPath:[controller.form indexPathOfFormRow:self.rowDescriptor] animated:YES];
+        //15Nov16 - Mani - Disable animation
+        [controller.tableView deselectRowAtIndexPath:[controller.form indexPathOfFormRow:self.rowDescriptor] animated:NO];
     }
     else if ([self.rowDescriptor.rowType isEqualToString:XLFormRowDescriptorTypeSelectorPickerView]){
-        [controller.tableView selectRowAtIndexPath:nil animated:YES scrollPosition:UITableViewScrollPositionNone];
+        //15Nov16 - Mani - Disable animation
+        [controller.tableView selectRowAtIndexPath:nil animated:NO scrollPosition:UITableViewScrollPositionNone];
     }
 }
 
